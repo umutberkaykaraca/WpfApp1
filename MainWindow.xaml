@@ -1,0 +1,113 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        Name="mainwindow1"
+        xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="WpfApp1.MainWindow"
+        mc:Ignorable="d"
+    WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="794" Width="1363">
+    <DockPanel>
+
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="8" DockPanel.Dock="Top">
+            <dxe:DateEdit Name="dtDersGunu" Margin="4" Width="200"/>
+            <Button x:Name="btn1"  Width="100" Height="30" Margin="4" Content="Sorgula (TarGöre)"/>
+
+
+            <dxe:ComboBoxEdit  Name="cboOgretmenler" Margin="4" Width="200" IsTextEditable="True">
+                <dxe:ComboBoxEdit.StyleSettings>
+                    <dxe:ComboBoxStyleSettings />
+                </dxe:ComboBoxEdit.StyleSettings>
+            </dxe:ComboBoxEdit>
+
+          
+
+
+
+            <Button x:Name="btn2" Width="100" Height="30" Margin="4" Content="Sorgula (Öğr Göre)"/>
+
+
+            <dxe:ComboBoxEdit  Name="cboSinifListesi"  Margin="4" Width="50" IsTextEditable="True">
+
+            </dxe:ComboBoxEdit>
+
+            <Button x:Name="btn3" Width="100" Height="30" Margin="4" Content="Sorgula Sınıfa Göre)"/>
+
+
+            <Button x:Name="btnKaydet" Width="100" Height="30" Margin="4" Content="Kaydet"/>
+
+        </StackPanel>
+
+
+
+
+
+        <dxg:GridControl x:Name="grd1" Margin="5" EnableSmartColumnsGeneration="True">
+
+            <dxg:GridColumn FieldName="Ders1">
+                <dxg:GridColumn.CellTemplate>
+                    <DataTemplate>
+
+
+                        <dxe:ComboBoxEdit   EditValue="{Binding RowData.Row.Ders1, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                                            ItemsSource="{Binding DataContext,ElementName=mainwindow1}"
+                                            ValueMember="AdSoyad"
+                                            DisplayMember="AdSoyad">
+                        </dxe:ComboBoxEdit>
+                    </DataTemplate>
+                </dxg:GridColumn.CellTemplate>
+                
+            </dxg:GridColumn>
+            
+            
+            <dxg:GridColumn Width="50" FieldName="Sinif1"/>
+            <dxg:GridColumn FieldName="Durum1"/>
+            <dxg:GridColumn FieldName="Ders2"/>
+            <dxg:GridColumn Width="50" FieldName="Sinif2"/>
+            <dxg:GridColumn FieldName="Durum2"/>
+            <dxg:GridColumn FieldName="Ders3"/>
+            <dxg:GridColumn FieldName="Sinif3"/>
+            <dxg:GridColumn FieldName="Durum3"/>
+            <dxg:GridColumn FieldName="Ders4"/>
+            <dxg:GridColumn FieldName="Sinif4"/>
+            <dxg:GridColumn FieldName="Durum4"/>
+            <dxg:GridColumn FieldName="Ders5"/>
+            <dxg:GridColumn FieldName="Sinif5"/>
+            <dxg:GridColumn FieldName="Durum5"/>
+            <dxg:GridColumn FieldName="Ders6"/>
+            <dxg:GridColumn FieldName="Sinif6"/>
+            <dxg:GridColumn FieldName="Durum6"/>
+            <dxg:GridColumn FieldName="Ders7"/>
+            <dxg:GridColumn FieldName="Sinif7"/>
+            <dxg:GridColumn FieldName="Durum7"/>
+            <dxg:GridColumn FieldName="Ders8"/>
+            <dxg:GridColumn FieldName="Sinif8"/>
+            <dxg:GridColumn FieldName="Durum8"/>
+            <dxg:GridColumn FieldName="Ders9"/>
+            <dxg:GridColumn FieldName="Sinif9"/>
+            <dxg:GridColumn FieldName="Durum9"/>
+            <dxg:GridColumn FieldName="Ders10"/>
+            <dxg:GridColumn FieldName="Sinif10"/>
+            <dxg:GridColumn FieldName="Durum10"/>
+            <dxg:GridColumn FieldName="Ders11"/>
+            <dxg:GridColumn FieldName="Sinif11"/>
+            <dxg:GridColumn FieldName="Durum11"/>
+
+            <dxg:GridControl.View>
+                <dxg:TableView Name="tw1" ImmediateUpdateRowPosition="True" NewItemRowPosition="Bottom"/>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+
+
+
+
+
+
+
+
+
+    </DockPanel>
+</Window>
